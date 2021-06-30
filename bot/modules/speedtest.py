@@ -13,7 +13,6 @@ def speedtest(update, context):
     test.get_best_server()
     test.download()
     test.upload()
-    test.results.share()
     result = test.results.dict()
     path = (result['share'])
     string_speed = f'''
@@ -24,10 +23,10 @@ def speedtest(update, context):
 <b>ISP:</b> <code>{result['client']['isp']}</code>
 
 <b>SpeedTest Results</b>
-<b>Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>
-<b>Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>
-<b>Ping:</b> <code>{result['ping']} ms</code>
-<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
+<b>Upload🔺:</b> <code>{speed_convert(result['upload'] / 8)}</code>
+<b>Download🔻:</b>  <code>{speed_convert(result['download'] / 8)}</code>
+<b>Ping📶:</b> <code>{result['ping']} ms</code>
+<b>ISP Rating🚦:</b> <code>{result['client']['isprating']}</code>
 '''
     ed_msg.delete()
     try:
